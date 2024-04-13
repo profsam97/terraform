@@ -5,12 +5,12 @@ provider "aws" {
 }
 
 resource "aws_instance" "my_first_instance" {
-        ami = ""
+        ami = "ami-051f8a213df8bc089"
         availability_zone = "us-east-1a"
         instance_type = "t2.micro"
-        key_name = ""
-        security_groups = [ "" ]
+        key_name = "hope_tf"
+        security_groups = [ "sg-041213ebdd97b5218" ]
         tags = {
-          name = "hope_tf"
+          name = "my_first_instance"
         }
 }
