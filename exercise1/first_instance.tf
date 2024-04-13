@@ -9,7 +9,7 @@ resource "aws_instance" "my_first_instance" {
         availability_zone = "us-east-1a"
         instance_type = "t2.micro"
         key_name = "hope_tf"
-        security_groups = [ "sg-041213ebdd97b5218" ]
+        vpc_security_group_ids = ["sg-041213ebdd97b5218"]
         tags = {
           name = "my_first_instance"
         }
