@@ -26,7 +26,7 @@ resource "aws_instance" "hope_instance" {
          ]
     }
     connection {
-      host = "self.public_ip"
+      host = self.public_ip
       user = var.USER
       private_key = file("hopekey")
     }
