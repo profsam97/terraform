@@ -1,5 +1,5 @@
 #!/bin/bash
-yum install https wget unzip -y
+yum install httpd wget unzip -y
 systemctl start httpd
 systemctl enable httpd
 wget https://www.tooplate.com/zip-templates/2133_moso_interior.zip
