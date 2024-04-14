@@ -16,19 +16,20 @@ resource "aws_instance" "hope_instance" {
 
     provisioner "file" {
       source = "web.sh"
-      destination = "/tmp/web.sh"
+      destination  = "/tmp/web.sh"
     }
 
+ provisioner "remote-exec" {
+        inline = [ 
+            "chmod u+x /tmp/web.sh",
+            "sudo /tmp/web.sh"
+         ]
+    }
     connection {
       host = "self.public_ip"
       user = var.USER
       private_key = file("hopekey")
     }
 
-    provisioner "remote-exec" {
-        inline = [ 
-            "chmod u+x /tmp/web.sh",
-            "sudo /tmp/web.sh"
-         ]
-    }
+   
 }
