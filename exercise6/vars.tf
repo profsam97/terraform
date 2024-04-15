@@ -2,10 +2,10 @@ variable "ZONE1" {
   default = "us-east-1a"
 }
 variable "ZONE2" {
-  default = "us-east-2b"
+  default = "us-east-1b"
 }
 variable "ZONE3" {
-  default = "us-east-2c"
+  default = "us-east-1c"
 }
 
 variable "PUB_KEY" {
