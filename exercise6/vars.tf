@@ -29,3 +29,7 @@ variable "AMIS" {
 variable "USER" {
   default = "ec2-user"
 }
+
+variable "MYIP" {
+  default = "192.168.171.191"
+}

@@ -14,12 +14,12 @@ resource "aws_security_group" "hope-stack-sg" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_blocks = [var.AMIS]
+        cidr_blocks = [var.MYIP]
   }
   ingress {
         from_port = 80
         to_port = 80
-        protocol = "tpc"
+        protocol = "tcp"
         cidr_blocks = [var.MYIP]
   }
   tags = {
