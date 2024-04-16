@@ -31,5 +31,5 @@ variable "USER" {
 }
 
 variable "MYIP" {
-  default = "192.168.0.130"
+  default = "192.168.37.220"
 }
