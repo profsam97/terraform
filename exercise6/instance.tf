@@ -43,7 +43,7 @@ resource "aws_ebs_volume" "vol_4_hope" {
 }
 
 resource "aws_volume_attachment" "atta_vol_hope" {
-   device_name = "/dev/sdh"
+   device_name = "/dev/xvdh"
    volume_id = aws_ebs_volume.vol_4_hope.id
    instance_id = aws_instance.hope_instance.id
 }

@@ -21,8 +21,8 @@ resource "aws_instance" "hope_instance" {
 
  provisioner "remote-exec" {
         inline = [ 
-            "chmod u+x /tmp/web.sh",
-            "sudo /tmp/web.sh"
+            "chmod u+x /tmp/web.sh",  
+            "sudo /tmp/web.sh"  // make sure you edit the sg to allow access on port 80 from your ip
          ]
     }
     connection {
