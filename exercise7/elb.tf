@@ -28,15 +28,15 @@ resource "aws_lb" "hope-lb" {
 
 resource "aws_lb_target_group" "hope-tg" {
   name     = "hope-tg"
-  port     = 80
-  protocol = "HTTP"
+  port     = 443
+  protocol = "HTTPS"
   vpc_id   = aws_vpc.hope_vpc.id
 }
 
 resource "aws_lb_target_group_attachment" "hope-tg-attachment" {
   target_group_arn = aws_lb_target_group.hope-tg.arn
   target_id        = aws_instance.hope_instance.id
-  port             = 80
+  port             = 443
 }
 
 resource "aws_lb_listener" "hope-front_end" {
