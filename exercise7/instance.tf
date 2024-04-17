@@ -55,6 +55,6 @@ output "PublicIP" {
 output "PrivateIP" {
   value = aws_instance.hope_instance.private_ip
 }
-output "load_balancer_arn" {
-  value = aws_lb.hope-lb.arn
+output "load_balancer_dns" {
+  value = aws_lb.hope-lb.dns_name
 }
