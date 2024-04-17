@@ -21,7 +21,7 @@ resource "aws_security_group" "hope-elb-sg" {
         from_port = 443
         to_port = 443
         protocol = "tcp"
-        cidr_blocks = ["0.0.0.0/0"] //provide inbound traffic for our load balancer on port 80
+        cidr_blocks = ["0.0.0.0/0"] //provide inbound traffic for our load balancer on port 443
   }
   tags = {
     Name = "hope-elb-group"

@@ -28,23 +28,23 @@ resource "aws_lb" "hope-lb" {
 
 resource "aws_lb_target_group" "hope-tg" {
   name     = "hope-tg"
-  port     = 443
-  protocol = "HTTPS"
+  port     = 80
+  protocol = "HTTP"
   vpc_id   = aws_vpc.hope_vpc.id
 }
 
 resource "aws_lb_target_group_attachment" "hope-tg-attachment" {
   target_group_arn = aws_lb_target_group.hope-tg.arn
   target_id        = aws_instance.hope_instance.id
-  port             = 443
+  port             = 80
 }
 
 resource "aws_lb_listener" "hope-front_end" {
   load_balancer_arn = aws_lb.hope-lb.arn
-  port              = "443"
-  protocol          = "HTTPS"
-  ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = "arn:aws:acm:us-east-1:339713121652:certificate/04be5120-f7ae-4b55-ab54-9baf98cac8ad"
+  port              = "80"
+  protocol          = "HTTP"
+  # ssl_policy        = "ELBSecurityPolicy-2016-08"
+  # certificate_arn   = "arn:aws:acm:us-east-1:339713121652:certificate/04be5120-f7ae-4b55-ab54-9baf98cac8ad"
 
   default_action {
     type             = "forward"
