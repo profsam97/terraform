@@ -98,3 +98,15 @@ resource "aws_route_table_association" "hope-pub-3-a" {
   subnet_id      = aws_subnet.hope-pub-3.id
   route_table_id = aws_route_table.hope-pub-RT.id
 }
+
+
+locals {
+  public_subnets = [
+    aws_subnet.hope-pub-1.id,
+    aws_subnet.hope-pub-2.id,
+    aws_subnet.hope-pub-3.id,
+    aws_subnet.hope-priv-1.id,
+    aws_subnet.hope-priv-2.id,
+    aws_subnet.hope-priv-3.id
+  ]
+}

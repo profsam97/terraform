@@ -1,14 +1,22 @@
+resource "aws_s3_bucket" "hope_access_logs" {
+  bucket = "hope-elb-access-logs"
+  tags = {
+    Name        = "Example LB Logs Bucket"
+    Environment = "Production"
+  }
+}
+
 resource "aws_lb" "hope-lb" {
   name               = "hope-lb-tf"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.hope-elb-sg.id]
-  subnets            = [for subnet in aws_subnet.public : subnet.id]
+  subnets            = local.public_subnets
 
   enable_deletion_protection = true
 
   access_logs {
-    bucket  = aws_s3_bucket.hope-elb-access-logs.id
+    bucket =  aws_s3_bucket.hope_access_logs.id
     prefix  = "hope-lb"
     enabled = true
   }
