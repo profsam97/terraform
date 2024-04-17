@@ -1,4 +1,4 @@
-resource "aws_security_group" "hope-stack-sg" {
+resource "aws_security_group" "hope-stack-sg" { 
   name        = "hope stack sg"
   description = "Security group for hope ssh"
   vpc_id      = aws_vpc.hope_vpc
