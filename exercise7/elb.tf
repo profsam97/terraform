@@ -44,7 +44,7 @@ resource "aws_lb_listener" "hope-front_end" {
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = "arn:aws:iam::187416307283:server-certificate/test_cert_rab3wuqwgja25ct3n4jdj2tzu4"
+  certificate_arn   = "arn:aws:acm:us-east-1:339713121652:certificate/04be5120-f7ae-4b55-ab54-9baf98cac8ad"
 
   default_action {
     type             = "forward"
