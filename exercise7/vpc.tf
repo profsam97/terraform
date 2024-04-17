@@ -104,9 +104,8 @@ locals {
   public_subnets = [
     aws_subnet.hope-pub-1.id,
     aws_subnet.hope-pub-2.id,
-    aws_subnet.hope-pub-3.id,
-    aws_subnet.hope-priv-1.id,
-    aws_subnet.hope-priv-2.id,
-    aws_subnet.hope-priv-3.id
+    aws_subnet.hope-pub-3.id
+    // dont use hope-priv-1 to 3, because when we use it in our lb subnets, elb expects each subnets to be in diff az, so since
+    // hope-priv-1 to 3 have the same zone with pub 1 to pub3.  
   ]
 }
