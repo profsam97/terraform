@@ -1,10 +1,10 @@
-resource "aws_s3_bucket" "hope_access_logs" {
-  bucket = "hope-elb-access-logs"
-  tags = {
-    Name        = "ELB Logs Bucket"
-    Environment = "Production"
-  }
-}
+# resource "aws_s3_bucket" "hope_access_logs" {
+#   bucket = "hope-elb-access-logs"
+#   tags = {
+#     Name        = "ELB Logs Bucket"
+#     Environment = "Production"
+#   }
+# }
 
 resource "aws_lb" "hope-lb" {
   name               = "hope-lb-tf"
@@ -15,11 +15,11 @@ resource "aws_lb" "hope-lb" {
 
   enable_deletion_protection = true
 
-  access_logs {
-    bucket =  aws_s3_bucket.hope_access_logs.id
-    prefix  = "hope-lb"
-    enabled = true
-  }
+  # access_logs {
+  #   bucket =  aws_s3_bucket.hope_access_logs.id
+  #   prefix  = "hope-lb"
+  #   enabled = true
+  # }
 
   tags = {
     Environment = "production"
