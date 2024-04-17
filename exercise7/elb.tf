@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "hope_access_logs" {
   bucket = "hope-elb-access-logs"
   tags = {
-    Name        = "Example LB Logs Bucket"
+    Name        = "ELB Logs Bucket"
     Environment = "Production"
   }
 }
