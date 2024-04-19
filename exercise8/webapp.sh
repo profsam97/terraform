@@ -8,5 +8,5 @@ npm -v
 cd ryada
 sudo npm install
 sudo npm run build 
-ifconfig
+ifconfig | grep inet
 sudo npm start
