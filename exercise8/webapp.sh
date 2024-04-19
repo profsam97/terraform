@@ -7,6 +7,6 @@ node -v
 npm -v
 cd ryada
 sudo npm install
-npm run build 
+sudo npm run build 
 ifconfig
-npm start
+sudo npm start
