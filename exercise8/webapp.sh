@@ -9,4 +9,4 @@ cd Ryada
 sudo npm install
 sudo npm run build 
 ifconfig | grep inet
-sudo npm start
+sudo nohup npm start & # Run npm start in the background using nohup
