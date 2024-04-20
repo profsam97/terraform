@@ -5,7 +5,7 @@ resource "aws_key_pair" "hope-key" {
 
 resource "aws_instance" "hope_instance" {
     ami = var.AMIS[var.REGION]
-    instance_type = "t2.micro"
+    instance_type = "t2.medium"
     subnet_id = aws_subnet.hope-pub-1.id
     vpc_security_group_ids = [ aws_security_group.hope-stack-sg.id]
     key_name = aws_key_pair.hope-key.key_name
@@ -21,8 +21,8 @@ resource "aws_instance" "hope_instance" {
 
  provisioner "remote-exec" {
         inline = [ 
-            "chmod u+x /tmp/web.sh",  
-            "sudo /tmp/web.sh"  
+            "chmod u+x /tmp/webapp.sh",  
+            "sudo /tmp/webapp.sh"  
          ]
     }
     connection {
@@ -30,8 +30,6 @@ resource "aws_instance" "hope_instance" {
       user = var.USER
       private_key = file(var.PRI_KEY)
     }
-
-   
 }
 
 resource "aws_ebs_volume" "vol_4_hope" {
